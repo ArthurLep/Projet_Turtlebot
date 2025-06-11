@@ -14,5 +14,5 @@ def centres_proches_robot(clusters, robot_pos, nb_points=15):
         y_moyen = sum(p[1] for p in points_selectionnes) / len(points_selectionnes)
         
         centres.append((x_moyen, y_moyen))
-    
-    return centres
+    centre_proche = min(centres, key=lambda c: ((c[0] - rx)**2 + (c[1] - ry)**2)**0.5)
+    return centre_proche
